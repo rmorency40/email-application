@@ -21,6 +21,7 @@ public class EmailApp {
        
        em1.setAlternateEmail("js@gmaail.com");
        System.out.println("Your alternate email address is: " + em1.getalternateEmail());
+       System.out.println(em1.showInfo());
 		
 	}
 

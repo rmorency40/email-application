@@ -18,26 +18,26 @@ public class Email {
 	public Email(String firstName, String lastName) {
 		this.firstName =  firstName;
 		this.lastName = lastName;
-		System.out.println("Email CREATED: " + this.firstName + " " + this.lastName);
+		//System.out.println("Email CREATED: " + this.firstName + " " + this.lastName);
 		
 		// Call a method asking for the department - return department
 		this.department = setDepartment();
-		System.out.println("Department: " + this.department);
+		//System.out.println("Department: " + this.department);
 		
 		// Call a method that returns arandom password
 		this.password = randomPassword(defaultPasswordLength);
-		System.out.println("Your password is: " +this.password);
+		//System.out.println("Your password is: " +this.password);
 		
 		//Combine element to nenerate teh email address
 		
 		email = firstName.toLowerCase() + '.' + lastName.toLowerCase() + "@" + department + "." + companySuffix;
-		System.out.println("Your email is: " +email);
+		//System.out.println("Your email is: " +email);
 	}
 	
 	// Ask for the  department
 	
 	private String setDepartment() {
-		System.out.print("DEPARTMENT CODES :\n1 for Sales\n2 for Development\n3 for Accounting\n0 for none\nEnter department :");
+		System.out.print("New worker " + firstName + " .Department  codes :\n1 for Sales\n2 for Development\n3 for Accounting\n0 for none\nEnter department : ");
 		Scanner in = new Scanner(System.in);
 		int depChoice = in.nextInt();
 		if (depChoice == 1) { return "sales";}
@@ -83,5 +83,10 @@ public class Email {
 	public  String getalternateEmail() { return alternateEmail;}
 	public String getPassword() { return password;}
 	
+	public String showInfo() {
+		return "\nDISPLAY NAME: " + firstName + " " + lastName + " " +
+				"\nMAILBOX CAPACITY: " + mailBoxCapacity + " mb ";
+				
+	}
 	
 }
