@@ -44,6 +44,12 @@ public class Student {
 	
 	public void enroll() {
 		do {
+			System.out.println("Choose the courses you want to enroll: "
+					+ "\n 1 - History 101"
+					+ "\n 2 - Mathematics 101"
+					+"\n 3 - English 101" 
+					+ "\n 4 - Chemistry 101"
+					+ "\n 5 - Computer Science 101 ");
 				System.out.print("Enter course to enroll (Q to quit): ");
 				Scanner in =  new Scanner(System.in);
 				String course = in.nextLine();
