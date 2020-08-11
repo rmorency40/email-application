@@ -13,15 +13,26 @@ To see the status of the student, we should see their name, ID, courses enrolled
 
 package studentsdatabaseApp;
 
+import java.util.Scanner;
+
 public class StudentDatabaseApp {
 
 	public static void main(String[] args) {
-		Student sdt1 = new Student();
-		sdt1.enroll();
-		// Ask how many new users we wnat to add
+		// Ask how many new students we wnat to add
+		System.out.print("Enter number of new students to enroll: ");
+		Scanner in = new Scanner(System.in);
+		int maxOfStudents = in.nextInt();
+		Student[] students = new Student[maxOfStudents]; // Creating an array of objects
 		
 		//Create n numbers of new students
-
+		for (int n = 0; n < maxOfStudents; n++) {
+			students[n] = new Student();
+			students[n].enroll();
+			students[n].payTuition();
+		}
+		 for (int n = 0; n < maxOfStudents; n++) {
+			 System.out.println(students[n].toString());
+		 }
 	}
 
 }
