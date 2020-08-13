@@ -12,7 +12,7 @@ public class Student {
 	private int  tuitionBalance = 0;
 	private static int costOfCourse = 600;
 	private static int id = 1000;
-	
+	//private static String courseName;
 	
 	// Constructor prompts user to enter student's nad and year
 	public Student() {
@@ -40,24 +40,36 @@ public class Student {
 		this.studentID = gradeYear + "" + id;
 	}
 	
+	//Define  the list of courses
+	
+	public void coursesList() {
+		System.out.println("Please, choose between the below courses to enroll: "
+				+ "\n 1 - History 101"
+				+ "\n 2 - Mathematics 101"
+				+"\n 3 - English 101" 
+				+ "\n 4 - Chemistry 101"
+				+ "\n 5 - Computer Science 101 ");
+		
+	}
 	//Enroll in courses
 	
 	public void enroll() {
 		do {
-			System.out.println("Choose the courses you want to enroll: "
-					+ "\n 1 - History 101"
-					+ "\n 2 - Mathematics 101"
-					+"\n 3 - English 101" 
-					+ "\n 4 - Chemistry 101"
-					+ "\n 5 - Computer Science 101 ");
-				System.out.print("Enter course to enroll (Q to quit): ");
+			    coursesList();
+				System.out.print("\nEnter course to enroll (Q to quit): ");
 				Scanner in =  new Scanner(System.in);
 				String course = in.nextLine();
 				if (!course.equals("Q")) {
 					courses = courses + "\n " + course;
 					tuitionBalance = tuitionBalance + costOfCourse;
 				}
-				else {
+				
+				//else if (!course.contentEquals("History 101") || !course.contains("Mathematics 101") || !course.contains("English 101") 
+						//|| !course.contains("Chemistry 101") || !course.contains("Computer Science 101"))
+						// {
+					
+				//}
+				else  {
 					break;
 				}
 		} while (1 !=0);	
